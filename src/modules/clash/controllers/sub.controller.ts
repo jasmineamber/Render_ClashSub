@@ -2,7 +2,7 @@
  * @Author       : jasmineamber
  * @Date         : 2023-04-06 22:06:25
  * @LastEditors  : jasmineamber
- * @LastEditTime : 2023-04-07 10:22:51
+ * @LastEditTime : 2023-04-07 15:09:50
  * @FilePath     : /src/modules/clash/controllers/sub.controller.ts
  * @Description  :
  */
@@ -63,5 +63,10 @@ export class SubController {
     const { name, url } = data;
     await this.service.update(name, url);
     return `更新成功`;
+  }
+
+  @Get("/ping")
+  async ping() {
+    return "OK";
   }
 }
