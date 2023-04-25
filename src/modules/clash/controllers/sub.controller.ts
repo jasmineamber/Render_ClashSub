@@ -2,7 +2,7 @@
  * @Author       : jasmineamber
  * @Date         : 2023-04-06 22:06:25
  * @LastEditors  : jasmineamber
- * @LastEditTime : 2023-04-07 15:09:50
+ * @LastEditTime : 2023-04-25 16:21:43
  * @FilePath     : /src/modules/clash/controllers/sub.controller.ts
  * @Description  :
  */
@@ -43,6 +43,9 @@ export class SubController {
       const data = reply.data;
       const headers = <AxiosHeaders>reply.headers;
       for (let key in headers.toJSON()) {
+        if (key === "transfer-encoding") {
+          continue;
+        }
         res.header(key, headers[key]);
       }
       res.send(data);
