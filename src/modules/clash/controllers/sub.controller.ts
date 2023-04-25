@@ -2,7 +2,7 @@
  * @Author       : jasmineamber
  * @Date         : 2023-04-06 22:06:25
  * @LastEditors  : jasmineamber
- * @LastEditTime : 2023-04-25 16:21:43
+ * @LastEditTime : 2023-04-25 16:28:26
  * @FilePath     : /src/modules/clash/controllers/sub.controller.ts
  * @Description  :
  */
@@ -26,6 +26,11 @@ export class SubController {
   constructor(protected service: SubService) {}
 
   @Get()
+  async default() {
+    return "Hello World!";
+  }
+
+  @Get("/get")
   async query(
     @Query(
       new ValidationPipe({
