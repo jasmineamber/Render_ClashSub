@@ -2,7 +2,7 @@
  * @Author       : jasmineamber
  * @Date         : 2023-04-04 17:02:43
  * @LastEditors  : jasmineamber
- * @LastEditTime : 2023-04-07 09:42:57
+ * @LastEditTime : 2023-04-25 15:18:49
  * @FilePath     : /src/main.ts
  * @Description  :
  */
@@ -20,6 +20,6 @@ async function bootstrap() {
     new FastifyAdapter()
   );
   app.enableCors();
-  await app.listen(3000);
+  await app.listen(3000, "0.0.0.0");
 }
 bootstrap();
